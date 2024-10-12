@@ -9,7 +9,7 @@ from datetime import datetime
 
 # Initialize Firebase app
 if not firebase_admin._apps:
-    cred = credentials.Certificate(r"C:\Users\thoba001\Videos\Soil\soil-monitor.json")
+    cred = credentials.Certificate("soil-monitor.json")
     firebase_admin.initialize_app(cred, {
         'databaseURL': 'https://soil-monitor-badbe-default-rtdb.firebaseio.com/'
     })
