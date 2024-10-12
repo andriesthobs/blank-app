@@ -14,7 +14,7 @@ if firebase_credentials:
     cred = credentials.Certificate(json.loads(firebase_credentials))  # Load the credentials from environment
     if not firebase_admin._apps:
         firebase_admin.initialize_app(cred, {
-            'databaseURL': 'https://your-database-url.firebaseio.com'
+            'databaseURL': 'https://soil-monitor-badbe-default-rtdb.firebaseio.com/'
     })
 ################################################################################################################
 # Initialize Firebase app
