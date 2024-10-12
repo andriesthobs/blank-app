@@ -7,13 +7,22 @@ from firebase_admin import credentials, db
 import json
 from datetime import datetime
 
-# Initialize Firebase app
-if not firebase_admin._apps:
-    cred = credentials.Certificate("soil-monitor.json")
-    firebase_admin.initialize_app(cred, {
-        'databaseURL': 'https://soil-monitor-badbe-default-rtdb.firebaseio.com/'
-    })
+firebase_credentials = os.getenv('FIREBASE_CREDENTIALS')
 
+if firebase_credentials:
+    cred = credentials.Certificate(json.loads(firebase_credentials))  # Load the credentials from environment
+    if not firebase_admin._apps:
+        firebase_admin.initialize_app(cred, {
+            'databaseURL': 'https://your-database-url.firebaseio.com'
+    })
+################################################################################################################
+# Initialize Firebase app
+#if not firebase_admin._apps:
+#    cred = credentials.Certificate("soil-monitor.json")
+#    firebase_admin.initialize_app(cred, {
+#        'databaseURL': 'https://soil-monitor-badbe-default-rtdb.firebaseio.com/'
+#    })
+#################################################################################################################
 # Function to fetch data from Firebase
 def fetch_data_from_firebase():
     ref = db.reference('soil_data')
