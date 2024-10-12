@@ -4,3 +4,4 @@ plotly==5.20.0
 streamlit==1.23.1
 openpyxl
 matplotlib
+seaborn
