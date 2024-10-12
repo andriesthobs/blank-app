@@ -5,4 +5,4 @@ streamlit==1.23.1
 openpyxl
 matplotlib
 seaborn
-firebase
+firebase-admin
