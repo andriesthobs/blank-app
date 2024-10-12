@@ -6,6 +6,7 @@ import firebase_admin
 from firebase_admin import credentials, db
 import json
 from datetime import datetime
+import os
 
 firebase_credentials = os.getenv('FIREBASE_CREDENTIALS')
 
